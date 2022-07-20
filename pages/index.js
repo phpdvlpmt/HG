@@ -3,9 +3,7 @@ import { GraphQLClient, gql } from 'graphql-request'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const hygraph = new GraphQLClient(
-  'https://api-eu-central-1.hygraph.com/v2/cl5qh2swa014z01uk9hv6em7f/master'
-)
+const hygraph = new GraphQLClient(process.env.CONTENT_API)
 const QUERY = gql`
   {
     posts {
@@ -39,7 +37,7 @@ export async function getStaticProps() {
 
 export default function Home({ posts }) {
   return (
-    <div>
+    <div className="container mx-auto px-4">
       <Head>
         <title>Create Next App</title>
         <meta name="description" content="Blog" />
@@ -47,7 +45,12 @@ export default function Home({ posts }) {
       </Head>
 
       <main>
-        <ul>
+        <div>
+          <Link href="/ext">
+            <a>EXT</a>
+          </Link>
+        </div>
+        <ul className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {posts.map(({ id, title, slug, coverImage, author, content }) => (
             <div key={id}>
               <Link href={`/post/${slug}`}>{title}</Link>
