@@ -39,7 +39,6 @@ export default function Home({ posts }) {
   return (
     <div className="container mx-auto px-4">
       <Head>
-        <html lang="cs" />
         <title>Create Next App</title>
         <meta name="description" content="Blog" />
         <link rel="icon" href="/favicon.ico" />
