@@ -37,7 +37,7 @@ export async function getStaticProps() {
 
 export default function Home({ posts }) {
   return (
-    <div className="container mx-auto px-4">
+    <div>
       <Head>
         <title>Create Next App</title>
         <meta name="description" content="Blog" />
@@ -45,9 +45,12 @@ export default function Home({ posts }) {
       </Head>
 
       <main>
-        <div>
+        <div className="flex space-x-4 text-lg font-semibold w-full bg-red-700 text-white p-4">
           <Link href="/ext">
             <a>EXT</a>
+          </Link>
+          <Link href="/inf">
+            <a>INF</a>
           </Link>
         </div>
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 max-w-6xl mx-auto">

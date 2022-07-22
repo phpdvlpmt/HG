@@ -14,7 +14,7 @@ export async function getStaticProps() {
 }
 const inf = ({ works }) => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 container mx-auto gap-4 p-5">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-6xl mx-auto gap-4 py-10 ">
       {works?.map((work) => (
         <div
           key={work?.id}
