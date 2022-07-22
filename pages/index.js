@@ -50,7 +50,7 @@ export default function Home({ posts }) {
             <a>EXT</a>
           </Link>
         </div>
-        <ul className="grid grid-cols-1 md:grid-cols-4 gap-10">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 max-w-6xl mx-auto">
           {posts.map(({ id, title, slug, coverImage, author, content }) => (
             <div key={id}>
               <Link href={`/post/${slug}`}>{title}</Link>
