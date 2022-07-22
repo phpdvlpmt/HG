@@ -14,18 +14,15 @@ export async function getStaticProps() {
 }
 const inf = ({ works }) => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 container mx-auto gap-4 p-5">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 container mx-auto gap-4 p-5">
       {works?.map((work) => (
-        <div key={work.id} className="bg-slate-600 w-72 h-52 relative">
-          <Link href={work.pdf.url}>
+        <div
+          key={work?.id}
+          className="bg-slate-600  sm:bg-red-800  aspect-w-1 aspect-h-1 sm:aspect-w-1 sm:aspect-h-1  w-full overflow-hidden"
+        >
+          <Link href={work?.pdf.url}>
             <a target="_blank">
-              <Image
-                src={work.image.url}
-                layout="fill"
-                alt="work"
-                objectFit="cover"
-                className="overflow-hidden "
-              />
+              <Image src={work.image.url} layout="fill" alt="work" />
             </a>
           </Link>
         </div>
